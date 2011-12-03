@@ -1,0 +1,31 @@
+##license gpl 
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+[Desktop Entry]
+Actions=folderappend;version
+Icon=dolphin
+ServiceTypes=KonqPopupMenu/Plugin,inode/directory
+Type=Service
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=open with Kate folder
+X-KDE-Submenu[it]=apri con Kate cartella
+
+
+[Desktop Action folderappend]
+Exec=kate-open-folder "%u"
+Icon=text-editor
+Name=open files in the folder with kate
+Name[it]=kate apri tutti i documenti
+
+
