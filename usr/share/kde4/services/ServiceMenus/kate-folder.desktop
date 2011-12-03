@@ -23,7 +23,7 @@ X-KDE-Submenu[it]=apri con Kate cartella
 
 
 [Desktop Action folderappend]
-Exec=kate-open-folder "%u"
+Exec=ktexeditor-open-folder "%u"
 Icon=text-editor
 Name=open files in the folder with kate
 Name[it]=kate apri tutti i documenti

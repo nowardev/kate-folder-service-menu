@@ -38,4 +38,4 @@ fi
 
 functionstartkate
 
-find "$1" \( -name .git -o -name .svn \) -prune -o -type f -exec bash -c 'f=$(file -i "$1"); [[ ${f#"$1: "} = *text* ]]' _ {} \; -exec kate {} +
+find "$1" \( -name .git -o -name .svn -o -name *~ \) -prune -o -type f -exec bash -c 'f=$(file -i "$1"); [[ ${f#"$1: "} = *text* ]]' _ {} \; -exec kate {} +
