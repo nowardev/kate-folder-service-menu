@@ -1,4 +1,3 @@
-##license gpl 
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -12,25 +11,37 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-[Desktop Entry]
-Actions=folderappendb;folderappend
-Icon=dolphin
-ServiceTypes=KonqPopupMenu/Plugin,inode/directory
-Type=Service
-X-KDE-Priority=TopLevel
-X-KDE-Submenu=open folder with Kate
-X-KDE-Submenu[it]=apri cartella con Kate
 
 
-[Desktop Action folderappend]
-Exec=ktexeditor-open-folder n "%u"
-Icon=text-editor
-Name=Open folder with kate with backup
-Name[it]=apri cartella con kate con backup
 
-[Desktop Action folderappendb]
-Exec=ktexeditor-open-folder b "%u"
-Icon=text-editor
-Name=Open folder with kate 
-Name[it]=apri cartella con kate
+What is ?
 
+hi this service menu  select every file in a folder and opens  TEXT files with kate
+from dolphin
+
+INSTALLATION 
+
+for debian like :
+
+sudo ./install 
+then type i for install 
+
+
+like root , in a terminal do 
+
+./install 
+
+UNISTALLING 
+
+for debian like :
+
+sudo ./install 
+
+then type "u" To  uninstall 
+
+
+like root , in a terminal do 
+
+./install 
+
+then type "u" To  uninstall 
