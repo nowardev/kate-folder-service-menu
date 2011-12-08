@@ -14,17 +14,8 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>
 
  
-
-#while read line ;do  
-
-#if  [[  -z $(file "$line" | grep text ) &&  "$line"  =~ ".svn" && "$line"  =~ ".git" ]];then 
-#if   [[  $(file "$line") = *text && $line != *.svn && $line != *.git  ]]; then
- #kate "$line"  
- #fi ;   done< <(find . \( -name .git -o -name .svn \) -prune -o -type f -exec bash -c '[[ $(file "$1") = *text* ]]' _ {} \; -print)
-  #<(find "$1" -type f)
- 
-#find folderinput 
-# " ${f#"$1: "} remove filename: " at the start In case the file is  "./blah/foo/text/somebinaryfile"
+version="0.2"
+author="Nowardev"
 
 functionstartkate()
 {
@@ -38,4 +29,38 @@ fi
 
 functionstartkate
 
-find "$1" \( -name .git -o -name .svn -o -name *~ \) -prune -o -type f -exec bash -c 'f=$(file -i "$1"); [[ ${f#"$1: "} = *text* ]]' _ {} \; -exec kate {} +
+function_open_files(){
+
+
+
+
+
+while read line ;do  
+
+if  [[ "$line"  =~ ".svn" || "$line"  =~ ".git" ]] ;then
+	echo $line is not to open
+else
+
+if  [[ ! -z $(file "$line" | grep text )  ]];then 
+
+	if  [[ "$1" == "b" ]];then
+	    if  [[ "$line"  != *~  ]] ;then
+	     kate "$line"
+	    fi 
+
+		
+	 elif [[ "$1" == "n" ]];then
+		kate "$line"
+	  
+	fi
+fi
+fi
+done< <(find "$2" -type f)
+}
+
+ 
+
+ 
+function_open_files "$1" "$2"
+# " ${f#"$1: "} remove filename: " at the start In case the file is  "./blah/foo/text/somebinaryfile"
+#find "$1" \( -name .git -o -name .svn -o -name *~ \) -prune -o -type f -exec bash -c 'f=$(file -i "$1"); [[ ${f#"$1: "} = *text* ]]' _ {} \; -exec kate {} +
